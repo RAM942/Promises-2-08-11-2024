@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // Function that returns a promise
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        
+            const name = prompt("enter the name (ram123): ").toLowerCase(); 
+            const password=prompt("enter password (333):")
+            if (name==="ram123" && password==333 ) {
+                resolve("Login successfully done!");
+            } else if (name !=="ram123" && password==333) {
+                reject("Enter valid name");
+            }else if (name ==="ram123" && password!==333){
+                reject("enter valid password")
+            }
+            else {
+                reject("Invalid details")
+            }
+       
+    });
+}
+
+// Consuming the promise
+fetchData()
+    .then((message) => {
+        console.log(message); 
+    })
+    .catch((error) => {
+        console.error(error); 
+    });
+
+    </script>
+</body>
+</html>
